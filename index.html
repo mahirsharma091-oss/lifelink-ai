@@ -22,7 +22,42 @@
     @media(max-width:800px){ .hero{ grid-template-columns:1fr; } }
   </style>
 </head>
-<body><header><section class="hero">
+<body>.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.cta {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #00c6ff;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00c6ff;
+}<header><section class="hero">
   <h1>LifeLink AI</h1>
   <p>Your car accident AI emergency helper</p>
   <button class="cta">Call Ambulance</button>
